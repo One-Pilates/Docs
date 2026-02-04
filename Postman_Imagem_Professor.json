@@ -1,0 +1,130 @@
+{
+  "info": {
+    "name": "Visualizar Imagem Professor",
+    "description": "Coleção para testar visualização de imagem do Professor ID 3",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "0. Login (obter novo token)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"admin@onepilates.com\",\n    \"senha\": \"sua_senha_aqui\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/auth/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["auth", "login"]
+        },
+        "description": "**IMPORTANTE:** Execute esta requisição primeiro se estiver recebendo erro 403!\n\n**Passos:**\n1. Substitua \"sua_senha_aqui\" pela senha real do administrador\n2. Execute a requisição\n3. Copie o token retornado no campo \"token\"\n4. Use esse token nas outras requisições\n\n**Resposta esperada:**\n```json\n{\n  \"token\": \"novo_token_jwt_aqui\",\n  \"role\": \"ADMINISTRADOR\"\n}\n```"
+      },
+      "response": []
+    },
+    {
+      "name": "1. Buscar Professor ID 3 (obter caminho da foto)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBvbmVwaWxhdGVzLmNvbSIsInJvbGUiOiJBRE1JTklTVFJBRE9SIiwiaWF0IjoxNzYzNDExNTY3LCJleHAiOjE3NjM0OTc5Njd9.nLBDj1aliBZaf7d6hna5wFhMlopy78eqaCpcFNA8eCs",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/professores/3",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "professores", "3"]
+        },
+        "description": "Esta requisição retorna os dados do professor incluindo o campo 'foto' com o caminho da imagem.\n\nExemplo de resposta:\n```json\n{\n  \"id\": 3,\n  \"nome\": \"João Silva\",\n  \"foto\": \"imagens/professor_3_1234567890.jpg\",\n  ...\n}\n```"
+      },
+      "response": []
+    },
+    {
+      "name": "2. Visualizar Imagem do Professor ID 3",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBvbmVwaWxhdGVzLmNvbSIsInJvbGUiOiJBRE1JTklTVFJBRE9SIiwiaWF0IjoxNzYzNDExNTY3LCJleHAiOjE3NjM0OTc5Njd9.nLBDj1aliBZaf7d6hna5wFhMlopy78eqaCpcFNA8eCs",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/imagens/imagens/professor_3_1234567890.jpg",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "imagens", "imagens", "professor_3_1234567890.jpg"],
+          "description": "**IMPORTANTE:** Substitua o nome do arquivo pelo caminho completo retornado no campo 'foto' da requisição anterior.\n\n**⚠️ SE ESTIVER COM ERRO 403:**\n1. Execute primeiro a requisição \"0. Login\" para obter um token válido\n2. Atualize o header Authorization com o novo token\n3. Tente novamente\n\n**Passos normais:**\n1. Execute primeiro a requisição \"Buscar Professor ID 3\"\n2. Copie o valor do campo 'foto' (ex: \"imagens/professor_3_1234567890.jpg\")\n3. Cole esse valor completo após /api/imagens/\n4. A URL final será: http://localhost:8080/api/imagens/imagens/professor_3_1234567890.jpg\n\n**No Postman:**\n- A imagem será exibida na aba 'Preview'\n- Ou você pode salvá-la clicando em 'Send and Download'"
+        },
+        "description": "Esta requisição retorna a imagem diretamente. No Postman, você verá a imagem na aba 'Preview' ou pode salvá-la.\n\n**IMPORTANTE:**\n1. Primeiro execute a requisição \"Buscar Professor ID 3\" para obter o caminho exato da foto\n2. Substitua o caminho na URL desta requisição pelo valor retornado no campo 'foto'\n3. A imagem será exibida diretamente no Postman"
+      },
+      "response": []
+    },
+    {
+      "name": "3. Upload Nova Foto - Professor ID 3",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBvbmVwaWxhdGVzLmNvbSIsInJvbGUiOiJBRE1JTklTVFJBRE9SIiwiaWF0IjoxNzYzNDExNTY3LCJleHAiOjE3NjM0OTc5Njd9.nLBDj1aliBZaf7d6hna5wFhMlopy78eqaCpcFNA8eCs",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": [],
+              "description": "Selecione uma imagem (JPEG, PNG, GIF ou WEBP, máximo 5MB)"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/professores/3/uploadFoto",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "professores", "3", "uploadFoto"]
+        },
+        "description": "Use esta requisição para fazer upload de uma nova foto para o professor ID 3.\n\n**Passos:**\n1. Na aba 'Body', selecione 'form-data'\n2. Adicione um campo 'file' do tipo 'File'\n3. Selecione uma imagem do seu computador\n4. Execute a requisição\n\nA resposta retornará o novo caminho da imagem salva."
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBvbmVwaWxhdGVzLmNvbSIsInJvbGUiOiJBRE1JTklTVFJBRE9SIiwiaWF0IjoxNzYzNDExNTY3LCJleHAiOjE3NjM0OTc5Njd9.nLBDj1aliBZaf7d6hna5wFhMlopy78eqaCpcFNA8eCs",
+      "type": "string"
+    }
+  ]
+}
