@@ -1,55 +1,70 @@
-# One Pilates — Landing Page 🌐
+# One Pilates — Documentação 📚
 
 ## 📌 Introdução
-A **One Pilates Landing Page** é a página institucional e de apresentação do estúdio One Pilates.
+Esta pasta contém a **documentação técnica completa** do projeto One Pilates.
 
-A aplicação foi desenvolvida em **Next.js com TypeScript**, oferecendo uma experiência moderna, performática e otimizada para SEO, apresentando os serviços, equipe e diferenciais do estúdio.
-
----
-
-## 🛠 Tecnologias
-- Next.js  
-- TypeScript  
-- React  
-
-<div align="center">
-  <img src="https://skillicons.dev/icons?i=nextjs,typescript,react" alt="Landing Page Skills" />
-</div>
+Aqui você encontrará análises, diagnósticos, correções aplicadas, guias de uso e toda a documentação relacionada ao desenvolvimento do sistema.
 
 ---
 
-## ⚙️ Instalação
+## 📂 Estrutura da Documentação
 
-```bash
-# Entrar no diretório da landing page
-cd one-pilates/landing-page
+### 🔍 Análises
+- `ANALISE_BACKEND.md` - Análise completa da arquitetura do backend
+- `ANALISE_CONFLITO_PROFESSOR_MESMO_HORARIO.md` - Análise de conflitos de agendamento
+- `ANALISE_ERROS_BUILD.md` - Diagnóstico de erros de compilação
+- `ANALISE_TESTES_MOCKITO_JACOCO.md` - Análise da cobertura de testes
+- `ANALISE_VALIDACOES_AGENDAMENTO.md` - Validações do sistema de agendamento
 
-# Instalar dependências
-npm install
+### 🐛 Diagnósticos
+- `DIAGNOSTICO_400_BAD_REQUEST.md` - Solução para erros 400
+- `DIAGNOSTICO_ERR_CONNECTION_REFUSED.md` - Problemas de conexão
+- `DIAGNOSTICO_PROBLEMAS_FRONTEND_BACKEND.md` - Integração frontend-backend
 
-# Rodar o projeto em desenvolvimento
-npm run dev
-```
+### ✅ Correções
+- `CORRECAO_TABELA_AGENDAMENTO_ALUNO.md` - Correções no banco de dados
+- `CORRECAO_TESTES.md` - Ajustes nos testes
+- `CORRECOES_APLICADAS.md` - Histórico de correções
+- Scripts SQL de correção
+
+### 📖 Documentação Técnica
+- `DOCUMENTACAO_COMPLETA_BACKEND.md` (V1, V2, V3, V4) - Documentação do backend
+- `GUIA_USO_JACOCO.md` - Guia de cobertura de testes
+- `INSTRUCOES_POSTMAN_IMAGEM.md` - Como usar a API no Postman
+
+### 🚀 Melhorias
+- `MELHORIAS_IMPLEMENTADAS.md` - Histórico de melhorias
+- `MELHORIAS_FINAIS_IMPLEMENTADAS.md` - Últimas implementações
+- `RESUMO_MELHORIAS_IMPLEMENTADAS.md` - Resumo consolidado
+
+### 🔐 Soluções de Erros
+- `SOLUCAO_ERRO_403.md` - Problemas de autenticação
+- `SOLUCAO_ERRO_CLASSNOTFOUND_AGENDAMENTOREPOSITORY.md` - Erros de dependência
+- `SOLUCOES_RACE_CONDITION_SERVICE.md` - Correção de race conditions
+
+### 🗄️ Scripts SQL
+- `script_correcao_agendamento_aluno.sql`
+- `script_correcao_agendamento_aluno_final.sql`
+- `script_correcao_agendamento_aluno_v2.sql`
+
+### 🔧 Configurações
+- `CONFIGURACAO_BANCO_TESTES.md` - Setup do banco de testes
+- `Postman_Imagem_Professor.json` - Collection do Postman
 
 ---
 
-## 🚀 Uso
+## 📝 Formato dos Arquivos
 
-Após iniciar o projeto:
-
-Aplicação disponível em: http://localhost:3000
+Todos os documentos estão em formato **Markdown (.md)** para fácil leitura e versionamento.
 
 ---
 
-## 📦 Build para Produção
+## 🎯 Como Usar
 
-```bash
-# Criar build otimizado
-npm run build
-
-# Rodar versão de produção
-npm start
-```
+1. Navegue pelos arquivos conforme a necessidade
+2. Use a busca (Ctrl+F) para encontrar tópicos específicos
+3. Consulte os scripts SQL quando precisar aplicar correções no banco
+4. Importe o arquivo JSON no Postman para testar a API
 
 ---
 
